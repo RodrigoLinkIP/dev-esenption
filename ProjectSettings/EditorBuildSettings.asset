@@ -6,7 +6,41 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Lobby.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/PasilloLobby.unity
+    guid: 4a3b693b776a01c4587a8bd35f68ee4c
+  - enabled: 1
+    path: Assets/Scenes/Reproducciones.unity
+    guid: 2f97db9c86e4e4a4ba641fd6bfc77df8
+  - enabled: 1
+    path: Assets/Scenes/GradasReproducciones.unity
+    guid: 2f335c7fdd35872468bd3e6824d05f2c
+  - enabled: 1
+    path: Assets/Scenes/PuertasAudi.unity
+    guid: 51e7c8ce378da9b40823293037b7efc2
+  - enabled: 1
+    path: Assets/Scenes/Cascada.unity
+    guid: e41c2bdb1a1a0af4491f0df7bcf85283
+  - enabled: 1
+    path: Assets/Scenes/Audi1.unity
+    guid: 588bcc4405838d24dae723b4cec0b79f
+  - enabled: 1
+    path: Assets/Scenes/Audi2.unity
+    guid: f870a3e1286c2a642bc26d5b11dce245
+  - enabled: 1
+    path: Assets/Scenes/Cafe.unity
+    guid: 6fcdbe20f0bc3ab4bac85458e6a5b655
+  - enabled: 1
+    path: Assets/Scenes/PassilloCafe.unity
+    guid: ec03ae8e3558b58449c2558dbe17871b
+  - enabled: 1
+    path: Assets/Scenes/PasilloMaquinita.unity
+    guid: 5fe4dc27ab782b54d8f4d08e78ad284c
+  - enabled: 1
+    path: Assets/Scenes/PasilloCC.unity
+    guid: 276147bb616892a4aba4f42e25228512
   m_configObjects:
+    com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
