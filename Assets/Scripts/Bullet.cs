@@ -37,13 +37,13 @@ public class Bullet : MonoBehaviour
 
         if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<EnemyHealth>()?.TakeDamage(damage);
+            collision.GetComponent<Enemy>()?.TakeDamage(damage);
             Destroy(gameObject);
         }
 
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponentInParent<PlayerHealth>()?.TakeDamage(damage);
+            collision.GetComponentInParent<PlayerController>()?.TakeDamage(damage);
             Destroy(gameObject);
         }
     }

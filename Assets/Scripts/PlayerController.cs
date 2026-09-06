@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     public float velocidad = 5f;
     public float fuerzaSalto = 8f;
     public float velocidadCorrer = 9f;
+    public float maxHealth = 20;
+    public float currentHealth;
 
     private Rigidbody2D rb;
     private float movimiento;
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        currentHealth = maxHealth;
 
         weapon = GetComponentInChildren<Weapon>();
 
@@ -106,6 +109,17 @@ public class PlayerController : MonoBehaviour
             weapon.SetVisible(false);
         }
     }
+
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+
+        if (currentHealth <= 0f)
+        {
+            //Die();
+        }
+    }
+
 
     void FixedUpdate()
     {
