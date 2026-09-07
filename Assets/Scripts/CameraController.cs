@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -9,6 +10,21 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+        if (player == null)
+        {
+            GameObject jugador = GameObject.FindWithTag("Player");
+
+            if (jugador != null)
+            {
+                player = jugador.transform;
+            }
+
+            return;
+        }
+
+        if (player == null)
+            return;
+
         float posX = player.position.x;
         float posY = player.position.y;
 

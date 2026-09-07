@@ -1,13 +1,25 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class CharacterSelector : MonoBehaviour
 {
-    public SpriteRenderer characterDisplay;
 
-    public Sprite personajeA;
-    public Sprite personajeB;
+    [Header("Alvin")]
+    public SpriteRenderer alvin;
+    public SpriteRenderer alvinObject;
+    public GameObject alvinInfo;
+    public AudioClip[] alvinSounds;
+
+    [Header("Juliana")]
+    public SpriteRenderer juliana;
+    public SpriteRenderer julianaObject;
+    public GameObject jualianaInfo;
+    public AudioClip[] julianaSounds;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
 
     private int personajeActual = 0;
 
@@ -54,11 +66,37 @@ public class CharacterSelector : MonoBehaviour
     {
         if (personajeActual == 0)
         {
-            characterDisplay.sprite = personajeA;
+            alvinObject.enabled = false;
+            alvin.enabled = true;
+            alvinInfo.SetActive(true);
+
+            julianaObject.enabled = true;
+            juliana.enabled = false;
+            jualianaInfo.SetActive(false);
+
+            ReproducirSonidoAleatorio(alvinSounds);
         }
         else
         {
-            characterDisplay.sprite = personajeB;
+            julianaObject.enabled = false;
+            juliana.enabled = true;
+            jualianaInfo.SetActive(true);
+
+            alvinObject.enabled = true;
+            alvin.enabled = false;
+            alvinInfo.SetActive(false);
+
+            ReproducirSonidoAleatorio(julianaSounds);
         }
+    }
+
+    void ReproducirSonidoAleatorio(AudioClip[] sonidos)
+    {
+        if (sonidos == null || sonidos.Length == 0)
+            return;
+
+        int indiceAleatorio = Random.Range(0, sonidos.Length);
+
+        audioSource.PlayOneShot(sonidos[indiceAleatorio]);
     }
 }

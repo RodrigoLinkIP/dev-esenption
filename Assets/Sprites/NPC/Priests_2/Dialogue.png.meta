@@ -145,12 +145,12 @@ TextureImporter:
       name: Dialogue_0
       rect:
         serializedVersion: 2
-        x: 44
+        x: 45
         y: 0
-        width: 52
-        height: 74
+        width: 50
+        height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -167,12 +167,12 @@ TextureImporter:
       name: Dialogue_1
       rect:
         serializedVersion: 2
-        x: 172
+        x: 173
         y: 0
-        width: 52
-        height: 74
+        width: 50
+        height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: Dialogue_2
       rect:
         serializedVersion: 2
-        x: 300
+        x: 301
         y: 0
-        width: 52
-        height: 74
+        width: 50
+        height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -211,12 +211,12 @@ TextureImporter:
       name: Dialogue_3
       rect:
         serializedVersion: 2
-        x: 428
+        x: 429
         y: 0
-        width: 52
-        height: 74
+        width: 50
+        height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -233,12 +233,12 @@ TextureImporter:
       name: Dialogue_4
       rect:
         serializedVersion: 2
-        x: 556
+        x: 557
         y: 0
-        width: 52
-        height: 74
+        width: 50
+        height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -255,12 +255,12 @@ TextureImporter:
       name: Dialogue_5
       rect:
         serializedVersion: 2
-        x: 684
+        x: 685
         y: 0
-        width: 52
-        height: 74
+        width: 50
+        height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -277,12 +277,12 @@ TextureImporter:
       name: Dialogue_6
       rect:
         serializedVersion: 2
-        x: 812
+        x: 813
         y: 0
-        width: 52
-        height: 74
+        width: 50
+        height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -299,12 +299,12 @@ TextureImporter:
       name: Dialogue_7
       rect:
         serializedVersion: 2
-        x: 940
+        x: 941
         y: 0
-        width: 52
-        height: 74
+        width: 50
+        height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -321,12 +321,12 @@ TextureImporter:
       name: Dialogue_8
       rect:
         serializedVersion: 2
-        x: 1068
+        x: 1069
         y: 0
-        width: 52
-        height: 74
+        width: 50
+        height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -343,12 +343,12 @@ TextureImporter:
       name: Dialogue_9
       rect:
         serializedVersion: 2
-        x: 1196
+        x: 1197
         y: 0
-        width: 52
-        height: 74
+        width: 50
+        height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -365,7 +365,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4d4325a97f9b0414e95e1fdeebac04ab
     internalID: 0
     vertices: []
     indices: 
@@ -373,7 +373,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Dialogue_0: -7516342049021962738
       Dialogue_1: -172192467049273162
