@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 direccionDisparo = Vector2.right;
 
     private Weapon weapon;
+    public bool canShoot = true;
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -95,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
         // ATAQUE
 
-        if ((Keyboard.current.jKey.isPressed || Keyboard.current.lKey.isPressed) && estaEnSuelo)
+        if ((Keyboard.current.jKey.isPressed || Keyboard.current.lKey.isPressed) && estaEnSuelo && canShoot)
         {
             animator.SetTrigger("Attack");
             weapon.Shoot(direccionDisparo);
