@@ -156,6 +156,9 @@ MonoBehaviour:
   velocidad: 4
   fuerzaSalto: 7
   velocidadCorrer: 8
+  maxHealth: 3
+  currentHealth: 0
+  canShoot: 1
   groundCheck: {fileID: 7445842852242989353}
   groundLayer:
     serializedVersion: 2

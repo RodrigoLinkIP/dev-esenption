@@ -82,6 +82,7 @@ public class Enemy : MonoBehaviour
         if (playerObject != null)
         {
             player = playerObject.transform;
+            Debug.Log(player.tag);
         }
     }
 
