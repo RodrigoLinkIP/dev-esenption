@@ -291,7 +291,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b24a24999472ff4f95915ed24263ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
+  dialogueLines:
+  - texto: '???: Bienvenido {nombre} '
+    tipoNombre: 1
+    nombreNPC: 
+  - texto: '{nombre}: Quien eres?'
+    tipoNombre: 1
+    nombreNPC: 
+  - texto: "{nombre}: Yo soy {nombre}. Tal vez te preguntes donde est\xE1s y que hago aqu\xED"
+    tipoNombre: 0
+    nombreNPC: Ricardo El Tercero
+  - texto: '{nombre}: Chi'
+    tipoNombre: 1
+    nombreNPC: 
+  - texto: "{nombre}: Soy el guardian de tus sue\xF1os y pesadillas. Como podr\xE1s imaginar no estamos en la realidad"
+    tipoNombre: 0
+    nombreNPC: Ricardo El Tercero
   dialogueMark: {fileID: 1155269664}
+  dialoguePanel: {fileID: 1993030795}
+  dialogueText: {fileID: 608757140}
+  typingTime: 0.05
 --- !u!1 &381848805
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,8 +787,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -13.5}
-  m_SizeDelta: {x: -60, y: -83}
+  m_AnchoredPosition: {x: 0, y: -5.950012}
+  m_SizeDelta: {x: -60, y: -67.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &608757140
 MonoBehaviour:
@@ -1846,7 +1865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1155269665
 Transform:
   m_ObjectHideFlags: 0
@@ -2454,7 +2473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1993030796
 RectTransform:
   m_ObjectHideFlags: 0
