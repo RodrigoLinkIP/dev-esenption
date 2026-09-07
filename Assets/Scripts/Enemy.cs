@@ -112,7 +112,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         // =================================================
         // PATRULLA
@@ -165,8 +165,8 @@ public class Enemy : MonoBehaviour
     // =====================================================
     // DISPARO
     // =====================================================
-
-    void Shoot()
+   
+    protected virtual void Shoot()
     {
         if (bulletPrefab == null || firePoint == null || !canShoot)
             return;
