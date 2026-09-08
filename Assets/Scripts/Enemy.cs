@@ -131,7 +131,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         // =================================================
         // PATRULLA
@@ -184,8 +184,8 @@ public class Enemy : MonoBehaviour
     // =====================================================
     // DISPARO
     // =====================================================
-
-    void Shoot()
+   
+    protected virtual void Shoot()
     {
         Debug.Log("💥 EL ENEMIGO ESTÁ DISPARANDO");
 
