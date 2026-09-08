@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: ee5f023377ff409459aa94e376f038cb
+guid: 3897b3db40b02794d9cffd73f5264bcf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6022710659687082290
-    second: Biker_doublejump_0
+      213: 55096583179448543
+    second: Punk_death 1_0
   - first:
-      213: -2791487309415417775
-    second: Biker_doublejump_1
+      213: -7215339724944195839
+    second: Punk_death 1_1
   - first:
-      213: -4413931266261368349
-    second: Biker_doublejump_2
+      213: -5486797437307046446
+    second: Punk_death 1_2
   - first:
-      213: -1996583338598712293
-    second: Biker_doublejump_3
+      213: -2018357348027772522
+    second: Punk_death 1_3
   - first:
-      213: 7920395215829079191
-    second: Biker_doublejump_4
+      213: -8934253668631397784
+    second: Punk_death 1_4
   - first:
-      213: -5286201605790654992
-    second: Biker_doublejump_5
+      213: 3237507411786037514
+    second: Punk_death 1_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -130,122 +130,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Biker_doublejump_0
+      name: Punk_death 1_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 9
-        width: 33
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ec6946090980b6ca0800000000000000
-      internalID: -6022710659687082290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Biker_doublejump_1
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 10
-        width: 26
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 158784ff415a249d0800000000000000
-      internalID: -2791487309415417775
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Biker_doublejump_2
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 11
-        width: 22
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3e1408b36e09eb2c0800000000000000
-      internalID: -4413931266261368349
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Biker_doublejump_3
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 10
-        width: 31
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b1c3c5a2806ba44e0800000000000000
-      internalID: -1996583338598712293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Biker_doublejump_4
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 1
-        width: 28
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 79412381c75eaed60800000000000000
-      internalID: 7920395215829079191
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Biker_doublejump_5
-      rect:
-        serializedVersion: 2
-        x: 241
+        x: 4
         y: 0
-        width: 29
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd0bfbcec0eb3c000800000000000000
+      internalID: 55096583179448543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Punk_death 1_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 25
         height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -255,8 +167,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0fd9fb3a5a3a3a6b0800000000000000
-      internalID: -5286201605790654992
+      spriteID: 10fbfe8afb6fddb90800000000000000
+      internalID: -7215339724944195839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Punk_death 1_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 0
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d53ac21dcafad3b0800000000000000
+      internalID: -5486797437307046446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Punk_death 1_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 27
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69151098faa5df3e0800000000000000
+      internalID: -2018357348027772522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Punk_death 1_4
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86abef3cf97230480800000000000000
+      internalID: -8934253668631397784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Punk_death 1_5
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 0
+        width: 27
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a09733586dfedec20800000000000000
+      internalID: 3237507411786037514
       vertices: []
       indices: 
       edges: []
@@ -275,12 +275,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Biker_doublejump_0: -6022710659687082290
-      Biker_doublejump_1: -2791487309415417775
-      Biker_doublejump_2: -4413931266261368349
-      Biker_doublejump_3: -1996583338598712293
-      Biker_doublejump_4: 7920395215829079191
-      Biker_doublejump_5: -5286201605790654992
+      Punk_death 1_0: 55096583179448543
+      Punk_death 1_1: -7215339724944195839
+      Punk_death 1_2: -5486797437307046446
+      Punk_death 1_3: -2018357348027772522
+      Punk_death 1_4: -8934253668631397784
+      Punk_death 1_5: 3237507411786037514
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

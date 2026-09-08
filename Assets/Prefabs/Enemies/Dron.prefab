@@ -129,7 +129,7 @@ MonoBehaviour:
   fireRate: 2
   detectionRange: 3.8
   firePoint: {fileID: 4602988916350129476}
-  canShoot: 0
+  canShoot: 1
   damage: 1
   damageCooldown: 1
 --- !u!1 &6045580295012078412

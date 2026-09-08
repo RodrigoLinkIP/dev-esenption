@@ -61,6 +61,11 @@ public class Enemy : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    // =====================================================
+    // PLAYER
+    // =====================================================
+
+    private AudioSource playerAudio;
 
     void Start()
     {
@@ -109,6 +114,19 @@ public class Enemy : MonoBehaviour
 
                 lastFireTime = Time.time;
             }
+        }
+
+        if (player == null)
+        {
+            GameObject jugador = GameObject.FindWithTag("Player");
+
+            if (jugador != null)
+            {
+                player = jugador.transform;
+                playerAudio = player.GetComponent<AudioSource>();
+            }
+
+            return;
         }
     }
 
@@ -169,6 +187,8 @@ public class Enemy : MonoBehaviour
 
     void Shoot()
     {
+        Debug.Log("💥 EL ENEMIGO ESTÁ DISPARANDO");
+
         if (bulletPrefab == null || firePoint == null || !canShoot)
             return;
 
@@ -224,6 +244,8 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator DestruirDespuesDeMorir()
     {
+        player.GetComponent<PlayerController>().PlayVictoriaAudios();
+
         yield return new WaitForSeconds(tiempoMuerte);
 
         Destroy(gameObject);

@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 8691801288725702477}
   - component: {fileID: 4552108907887527888}
   - component: {fileID: 162967840370350121}
+  - component: {fileID: 8730805355391093232}
   m_Layer: 0
   m_Name: Alvin
   m_TagString: Player
@@ -156,13 +157,140 @@ MonoBehaviour:
   velocidad: 4
   fuerzaSalto: 7
   velocidadCorrer: 8
-  maxHealth: 3
-  currentHealth: 0
   canShoot: 1
+  canDash: 0
+  dashSpeed: 15
+  dashDuration: 0.2
+  dashCooldown: 1
+  maxHealth: 20
+  currentHealth: 0
   groundCheck: {fileID: 7445842852242989353}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  dannioSounds:
+  - {fileID: 8300000, guid: 6bbac76cae003c949a7f1be9ac7f6101, type: 3}
+  - {fileID: 8300000, guid: 653fe1b70a9973c44af0190396f098db, type: 3}
+  - {fileID: 8300000, guid: aace80481ed71014c96bdc1642b4764f, type: 3}
+  - {fileID: 8300000, guid: 74d5fd3640ffd6a4e99aaadab06c124c, type: 3}
+  - {fileID: 8300000, guid: 2376c1c737cf8b747a48ffff87ed536c, type: 3}
+  - {fileID: 8300000, guid: c9aa5d1f1d77d0c4a8dccef476844aab, type: 3}
+  victoriaSounds: []
+  muerteSounds:
+  - {fileID: 8300000, guid: b9cded5d902e2454b89bf98ccc1f3fcb, type: 3}
+  - {fileID: 8300000, guid: e1984bcd15b41da4ea05249c6ec44a37, type: 3}
+  - {fileID: 8300000, guid: a8e1787b7dc80654ab84a7187f03b580, type: 3}
+  - {fileID: 8300000, guid: 6b4bc8f9087a7f74e96599dba0fe4db4, type: 3}
+  rangosVida:
+  - escenaInicial: 0
+    escenaFinal: 3
+    vidaMaxima: 20
+  - escenaInicial: 4
+    escenaFinal: 7
+    vidaMaxima: 16
+  - escenaInicial: 8
+    escenaFinal: 10
+    vidaMaxima: 14
+  - escenaInicial: 11
+    escenaFinal: 13
+    vidaMaxima: 10
+--- !u!82 &8730805355391093232
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8199919119738129285}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8561598572365142023
 GameObject:
   m_ObjectHideFlags: 0
