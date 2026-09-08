@@ -168,6 +168,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  barraDeVidaUI: {fileID: 0}
   dannioSounds:
   - {fileID: 8300000, guid: 6bbac76cae003c949a7f1be9ac7f6101, type: 3}
   - {fileID: 8300000, guid: 653fe1b70a9973c44af0190396f098db, type: 3}
@@ -420,7 +421,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 683452495811449049, guid: 6810b2d7997570c4ab29d03501259054, type: 3}
       propertyPath: fireRate
-      value: 2.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3345849468752238241, guid: 6810b2d7997570c4ab29d03501259054, type: 3}
       propertyPath: m_LocalPosition.x

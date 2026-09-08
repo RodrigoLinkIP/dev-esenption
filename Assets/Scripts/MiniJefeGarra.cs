@@ -11,6 +11,7 @@ public class MiniJefeGarra : MonoBehaviour
         Muriendo
     }
 
+
     // =========================================================
     // VIDA
     // =========================================================
@@ -21,6 +22,16 @@ public class MiniJefeGarra : MonoBehaviour
     private float currentHealth;
     private bool faseDos = false;
     private bool muerto = false;
+
+
+    // =========================================================
+    // MUERTE
+    // =========================================================
+
+    [Header("Muerte")]
+
+    [Tooltip("Tiempo que se deja reproducir la animación de muerte antes de destruir al jefe.")]
+    [SerializeField] private float tiempoAnimacionMuerte = 2f;
 
 
     // =========================================================
@@ -52,7 +63,6 @@ public class MiniJefeGarra : MonoBehaviour
     [SerializeField] private float velocidadCaida = 15f;
     [SerializeField] private float velocidadSubida = 5f;
 
-    // Posición original donde empezó el mini jefe
     private Vector2 posicionOriginal;
 
 
@@ -60,9 +70,17 @@ public class MiniJefeGarra : MonoBehaviour
     // DETECCIÓN DEL JUGADOR
     // =========================================================
 
-    [Header("Detección del jugador")]
-    [SerializeField] private float distanciaDeteccion = 10f;
-    [SerializeField] private float offsetY = 1.5f;
+    [Header("Zona de detección del jugador")]
+
+    [Tooltip("Ancho de la zona donde Garra detecta al jugador.")]
+    [SerializeField] private float anchoDeteccion = 4f;
+
+    [Tooltip("Altura de la zona de detección.")]
+    [SerializeField] private float altoDeteccion = 8f;
+
+    [Tooltip("Desplazamiento vertical de la zona respecto a Garra.")]
+    [SerializeField] private float offsetDeteccionY = -4f;
+
     [SerializeField] private LayerMask playerLayer;
 
 
@@ -116,6 +134,14 @@ public class MiniJefeGarra : MonoBehaviour
 
 
     // =========================================================
+    // ARENA
+    // =========================================================
+
+    [Header("Arena")]
+    public GameObject paredes;
+
+
+    // =========================================================
     // REFERENCIAS
     // =========================================================
 
@@ -126,8 +152,6 @@ public class MiniJefeGarra : MonoBehaviour
     private EstadoMinijefe estadoActual =
         EstadoMinijefe.Volando;
 
-    public GameObject paredes;
-
 
     // =========================================================
     // START
@@ -135,35 +159,66 @@ public class MiniJefeGarra : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb =
+            GetComponent<Rigidbody2D>();
 
-        animator = GetComponentInChildren<Animator>();
+
+        animator =
+            GetComponentInChildren<Animator>();
+
 
         spriteRenderer =
             GetComponentInChildren<SpriteRenderer>();
 
-        currentHealth = maxHealth;
 
-        // Guardamos la posición inicial COMPLETA
-        posicionOriginal = rb.position;
+        currentHealth =
+            maxHealth;
 
 
-        // Buscar jugador automáticamente
-        if (player == null)
+        // ---------------------------------------------
+        // GUARDAR ALTURA ORIGINAL
+        // ---------------------------------------------
+
+        if (rb != null)
         {
-            GameObject jugadorObject =
-                GameObject.FindWithTag("Player");
-
-            if (jugadorObject != null)
-            {
-                player = jugadorObject.transform;
-            }
+            posicionOriginal =
+                rb.position;
+        }
+        else
+        {
+            posicionOriginal =
+                transform.position;
         }
 
 
-        CambiarEstado(
-            EstadoMinijefe.Volando
-        );
+        // ---------------------------------------------
+        // BUSCAR JUGADOR
+        // ---------------------------------------------
+
+        BuscarJugador();
+
+
+        // ---------------------------------------------
+        // ANIMACIÓN INICIAL
+        // ---------------------------------------------
+
+        if (animator != null)
+        {
+            animator.SetBool(
+                "isWalking",
+                true
+            );
+
+            animator.SetBool(
+                "isAttacking",
+                false
+            );
+
+            animator.SetBool(
+                "isDying",
+                false
+            );
+        }
     }
 
 
@@ -177,21 +232,25 @@ public class MiniJefeGarra : MonoBehaviour
             return;
 
 
-        // Buscar jugador si todavía no existe
+        // ---------------------------------------------
+        // BUSCAR PLAYER SI SE PERDIÓ REFERENCIA
+        // ---------------------------------------------
+
         if (player == null)
         {
-            GameObject jugadorObject =
-                GameObject.FindWithTag("Player");
-
-            if (jugadorObject != null)
-            {
-                player = jugadorObject.transform;
-            }
+            BuscarJugador();
         }
 
 
-        // No generar kamikazes mientras está cayendo
-        if (estadoActual != EstadoMinijefe.Cayendo)
+        // ---------------------------------------------
+        // SPAWN
+        // ---------------------------------------------
+
+        // Mientras cae no genera kamikazes
+        if (
+            estadoActual !=
+            EstadoMinijefe.Cayendo
+        )
         {
             ControlarSpawn();
         }
@@ -210,14 +269,22 @@ public class MiniJefeGarra : MonoBehaviour
 
         switch (estadoActual)
         {
+            // ---------------------------------------------
+            // VOLANDO
+            // ---------------------------------------------
+
             case EstadoMinijefe.Volando:
 
                 Volar();
 
-                DetectarJugadorConLaser();
+                DetectarJugador();
 
                 break;
 
+
+            // ---------------------------------------------
+            // CAYENDO
+            // ---------------------------------------------
 
             case EstadoMinijefe.Cayendo:
 
@@ -228,6 +295,10 @@ public class MiniJefeGarra : MonoBehaviour
                 break;
 
 
+            // ---------------------------------------------
+            // SUBIENDO
+            // ---------------------------------------------
+
             case EstadoMinijefe.Subiendo:
 
                 Subir();
@@ -235,11 +306,34 @@ public class MiniJefeGarra : MonoBehaviour
                 break;
 
 
+            // ---------------------------------------------
+            // MURIENDO
+            // ---------------------------------------------
+
             case EstadoMinijefe.Muriendo:
 
-                rb.linearVelocity = Vector2.zero;
+                rb.linearVelocity =
+                    Vector2.zero;
 
                 break;
+        }
+    }
+
+
+    // =========================================================
+    // BUSCAR JUGADOR
+    // =========================================================
+
+    private void BuscarJugador()
+    {
+        GameObject jugadorObject =
+            GameObject.FindWithTag("Player");
+
+
+        if (jugadorObject != null)
+        {
+            player =
+                jugadorObject.transform;
         }
     }
 
@@ -251,7 +345,7 @@ public class MiniJefeGarra : MonoBehaviour
     private void Volar()
     {
         // ---------------------------------------------
-        // Detectar pared
+        // DETECTAR PARED
         // ---------------------------------------------
 
         if (wallCheck != null)
@@ -284,17 +378,17 @@ public class MiniJefeGarra : MonoBehaviour
 
 
         // ---------------------------------------------
-        // Velocidad
+        // VELOCIDAD SEGÚN FASE
         // ---------------------------------------------
 
         float velocidadActual =
             faseDos
-            ? velocidadVueloFase2
-            : velocidadVuelo;
+                ? velocidadVueloFase2
+                : velocidadVuelo;
 
 
         // ---------------------------------------------
-        // Movimiento horizontal
+        // MOVIMIENTO HORIZONTAL
         // ---------------------------------------------
 
         rb.linearVelocity =
@@ -309,43 +403,65 @@ public class MiniJefeGarra : MonoBehaviour
     // DETECTAR JUGADOR
     // =========================================================
 
-    private void DetectarJugadorConLaser()
+    private void DetectarJugador()
     {
         if (player == null)
             return;
 
 
-        Vector2 origenRayo =
+        // ---------------------------------------------
+        // CENTRO DEL GIZMO
+        // ---------------------------------------------
+
+        Vector2 centroDeteccion =
             new Vector2(
                 rb.position.x,
-                rb.position.y - offsetY
+                rb.position.y +
+                offsetDeteccionY
             );
 
 
-        RaycastHit2D hit =
-            Physics2D.Raycast(
-                origenRayo,
-                Vector2.down,
-                distanciaDeteccion,
+        // ---------------------------------------------
+        // TAMAÑO DEL GIZMO
+        // ---------------------------------------------
+
+        Vector2 tamañoDeteccion =
+            new Vector2(
+                anchoDeteccion,
+                altoDeteccion
+            );
+
+
+        // ---------------------------------------------
+        // BUSCAR PLAYER
+        // ---------------------------------------------
+
+        Collider2D jugadorDetectado =
+            Physics2D.OverlapBox(
+                centroDeteccion,
+                tamañoDeteccion,
+                0f,
                 playerLayer
             );
 
 
-        Debug.DrawRay(
-            origenRayo,
-            Vector2.down * distanciaDeteccion,
-            Color.red
-        );
+        if (jugadorDetectado == null)
+            return;
 
 
-        if (hit.collider != null)
+        PlayerController jugador =
+            jugadorDetectado
+                .GetComponentInParent<PlayerController>();
+
+
+        if (
+            jugadorDetectado.CompareTag("Player") ||
+            jugador != null
+        )
         {
-            if (hit.collider.CompareTag("Player"))
-            {
-                CambiarEstado(
-                    EstadoMinijefe.Cayendo
-                );
-            }
+            CambiarEstado(
+                EstadoMinijefe.Cayendo
+            );
         }
     }
 
@@ -356,7 +472,6 @@ public class MiniJefeGarra : MonoBehaviour
 
     private void Caer()
     {
-        // Solo movimiento vertical
         rb.linearVelocity =
             new Vector2(
                 0f,
@@ -386,7 +501,8 @@ public class MiniJefeGarra : MonoBehaviour
 
         Debug.DrawRay(
             groundCheck.position,
-            Vector2.down * groundCheckDistance,
+            Vector2.down *
+            groundCheckDistance,
             Color.green
         );
 
@@ -406,17 +522,9 @@ public class MiniJefeGarra : MonoBehaviour
 
     private void Subir()
     {
-        // ---------------------------------------------
-        // Posición actual
-        // ---------------------------------------------
-
         Vector2 posicionActual =
             rb.position;
 
-
-        // ---------------------------------------------
-        // Nueva posición
-        // ---------------------------------------------
 
         float nuevaY =
             posicionActual.y +
@@ -424,7 +532,10 @@ public class MiniJefeGarra : MonoBehaviour
             Time.fixedDeltaTime;
 
 
-        // Nunca superar la altura original
+        // ---------------------------------------------
+        // EVITAR SOBREPASAR ALTURA ORIGINAL
+        // ---------------------------------------------
+
         if (nuevaY >= posicionOriginal.y)
         {
             nuevaY =
@@ -439,27 +550,27 @@ public class MiniJefeGarra : MonoBehaviour
             );
 
 
-        // ---------------------------------------------
-        // Mover Rigidbody
-        // ---------------------------------------------
-
         rb.MovePosition(
             nuevaPosicion
         );
 
 
         // ---------------------------------------------
-        // Llegó arriba
+        // LLEGÓ A LA ALTURA ORIGINAL
         // ---------------------------------------------
 
-        if (nuevaY >= posicionOriginal.y)
+        if (
+            Mathf.Abs(
+                nuevaY -
+                posicionOriginal.y
+            ) <= 0.01f
+        )
         {
-            rb.MovePosition(
+            rb.position =
                 new Vector2(
                     rb.position.x,
                     posicionOriginal.y
-                )
-            );
+                );
 
 
             rb.linearVelocity =
@@ -481,22 +592,31 @@ public class MiniJefeGarra : MonoBehaviour
         EstadoMinijefe nuevoEstado
     )
     {
-        // No hacer nada si ya estamos en ese estado
-        if (estadoActual == nuevoEstado)
+        if (
+            estadoActual ==
+            nuevoEstado
+        )
+        {
             return;
+        }
 
 
-        // Si está muerto, no aceptar cambios
-        if (muerto &&
-            nuevoEstado != EstadoMinijefe.Muriendo)
+        if (
+            muerto &&
+            nuevoEstado !=
+            EstadoMinijefe.Muriendo
+        )
+        {
             return;
+        }
 
 
-        estadoActual = nuevoEstado;
+        estadoActual =
+            nuevoEstado;
 
 
         // ---------------------------------------------
-        // Limpiar velocidad al cambiar de estado
+        // LIMPIAR VELOCIDAD
         // ---------------------------------------------
 
         if (rb != null)
@@ -512,9 +632,9 @@ public class MiniJefeGarra : MonoBehaviour
 
         switch (nuevoEstado)
         {
-            // -----------------------------------------
+            // ---------------------------------------------
             // VOLANDO
-            // -----------------------------------------
+            // ---------------------------------------------
 
             case EstadoMinijefe.Volando:
 
@@ -540,9 +660,9 @@ public class MiniJefeGarra : MonoBehaviour
                 break;
 
 
-            // -----------------------------------------
+            // ---------------------------------------------
             // CAYENDO
-            // -----------------------------------------
+            // ---------------------------------------------
 
             case EstadoMinijefe.Cayendo:
 
@@ -564,9 +684,9 @@ public class MiniJefeGarra : MonoBehaviour
                 break;
 
 
-            // -----------------------------------------
+            // ---------------------------------------------
             // SUBIENDO
-            // -----------------------------------------
+            // ---------------------------------------------
 
             case EstadoMinijefe.Subiendo:
 
@@ -592,9 +712,9 @@ public class MiniJefeGarra : MonoBehaviour
                 break;
 
 
-            // -----------------------------------------
+            // ---------------------------------------------
             // MURIENDO
-            // -----------------------------------------
+            // ---------------------------------------------
 
             case EstadoMinijefe.Muriendo:
 
@@ -627,7 +747,9 @@ public class MiniJefeGarra : MonoBehaviour
         transform.rotation =
             Quaternion.Euler(
                 0f,
-                direccion < 0 ? 180f : 0f,
+                direccion < 0
+                    ? 180f
+                    : 0f,
                 0f
             );
     }
@@ -655,14 +777,14 @@ public class MiniJefeGarra : MonoBehaviour
 
         float tiempoActual =
             faseDos
-            ? tiempoEntreSpawnsFase2
-            : tiempoEntreSpawns;
+                ? tiempoEntreSpawnsFase2
+                : tiempoEntreSpawns;
 
 
         int maxActual =
             faseDos
-            ? maxKamikazesFase2
-            : maxKamikazes;
+                ? maxKamikazesFase2
+                : maxKamikazes;
 
 
         if (
@@ -672,7 +794,8 @@ public class MiniJefeGarra : MonoBehaviour
         {
             SpawnKamikaze();
 
-            tiempoDesdeSpawn = 0f;
+            tiempoDesdeSpawn =
+                0f;
         }
     }
 
@@ -702,6 +825,10 @@ public class MiniJefeGarra : MonoBehaviour
             ];
 
 
+        if (puntoSpawn == null)
+            return;
+
+
         GameObject enemigo =
             Instantiate(
                 enemigoKamikazePrefab,
@@ -724,7 +851,9 @@ public class MiniJefeGarra : MonoBehaviour
         }
 
 
-        tracker.Inicializar(this);
+        tracker.Inicializar(
+            this
+        );
     }
 
 
@@ -746,13 +875,16 @@ public class MiniJefeGarra : MonoBehaviour
     // RECIBIR DAÑO
     // =========================================================
 
-    public void TakeDamage(float cantidad)
+    public void TakeDamage(
+        float cantidad
+    )
     {
         if (muerto)
             return;
 
 
-        currentHealth -= cantidad;
+        currentHealth -=
+            cantidad;
 
 
         currentHealth =
@@ -770,14 +902,23 @@ public class MiniJefeGarra : MonoBehaviour
         );
 
 
+        // ---------------------------------------------
+        // FASE 2
+        // ---------------------------------------------
+
         if (
             !faseDos &&
-            currentHealth <= maxHealth * 0.5f
+            currentHealth <=
+            maxHealth * 0.5f
         )
         {
             ActivarFaseDos();
         }
 
+
+        // ---------------------------------------------
+        // MUERTE
+        // ---------------------------------------------
 
         if (currentHealth <= 0f)
         {
@@ -796,7 +937,8 @@ public class MiniJefeGarra : MonoBehaviour
             return;
 
 
-        faseDos = true;
+        faseDos =
+            true;
 
 
         Debug.Log(
@@ -804,7 +946,8 @@ public class MiniJefeGarra : MonoBehaviour
         );
 
 
-        tiempoDesdeSpawn = 0f;
+        tiempoDesdeSpawn =
+            0f;
     }
 
 
@@ -818,20 +961,87 @@ public class MiniJefeGarra : MonoBehaviour
             return;
 
 
+        // ---------------------------------------------
+        // PRIMERO CAMBIAMOS ESTADO
+        // ---------------------------------------------
+
         CambiarEstado(
             EstadoMinijefe.Muriendo
         );
 
 
-        muerto = true;
+        // ---------------------------------------------
+        // MARCAR COMO MUERTO
+        // ---------------------------------------------
 
+        muerto =
+            true;
+
+
+        // ---------------------------------------------
+        // DETENER MOVIMIENTO
+        // ---------------------------------------------
 
         if (rb != null)
         {
             rb.linearVelocity =
                 Vector2.zero;
+
+            rb.angularVelocity =
+                0f;
         }
 
+
+        // ---------------------------------------------
+        // ASEGURAR ANIMACIÓN DE MUERTE
+        // ---------------------------------------------
+
+        if (animator != null)
+        {
+            animator.SetBool(
+                "isWalking",
+                false
+            );
+
+            animator.SetBool(
+                "isAttacking",
+                false
+            );
+
+            animator.SetBool(
+                "isDying",
+                true
+            );
+        }
+
+
+        // ---------------------------------------------
+        // AUDIO DE VICTORIA
+        // ---------------------------------------------
+
+        if (player != null)
+        {
+            PlayerController jugador =
+                player.GetComponent<PlayerController>();
+
+
+            if (jugador == null)
+            {
+                jugador =
+                    player.GetComponentInParent<PlayerController>();
+            }
+
+
+            if (jugador != null)
+            {
+                jugador.PlayVictoriaAudios();
+            }
+        }
+
+
+        // ---------------------------------------------
+        // ESPERAR ANIMACIÓN
+        // ---------------------------------------------
 
         StartCoroutine(
             DestruirDespuesDeMorir()
@@ -845,16 +1055,35 @@ public class MiniJefeGarra : MonoBehaviour
 
     private IEnumerator DestruirDespuesDeMorir()
     {
+        // ---------------------------------------------
+        // ESPERAR A QUE TERMINE LA ANIMACIÓN
+        // ---------------------------------------------
+
+        yield return
+            new WaitForSeconds(
+                tiempoAnimacionMuerte
+            );
+
+
+        // ---------------------------------------------
+        // ABRIR PAREDES
+        // ---------------------------------------------
+
         if (paredes != null)
         {
-            paredes.SetActive(false);
+            paredes.SetActive(
+                false
+            );
         }
 
 
-        yield return new WaitForSeconds(2f);
+        // ---------------------------------------------
+        // DESTRUIR JEFE
+        // ---------------------------------------------
 
-
-        Destroy(gameObject);
+        Destroy(
+            gameObject
+        );
     }
 
 
@@ -870,41 +1099,52 @@ public class MiniJefeGarra : MonoBehaviour
             return;
 
 
-        // ---------------------------------------------
-        // Daño al jugador mientras cae
-        // ---------------------------------------------
-
+        // Solo hace daño de aplastamiento
+        // mientras está cayendo
         if (
-            estadoActual ==
+            estadoActual !=
             EstadoMinijefe.Cayendo
         )
         {
-            if (
-                collision.gameObject.CompareTag(
-                    "Player"
-                )
-            )
-            {
-                PlayerController jugador =
-                    collision.gameObject
-                        .GetComponentInParent<PlayerController>();
-
-
-                if (jugador != null)
-                {
-                    jugador.TakeDamage(
-                        dañoAplastamiento
-                    );
-                }
-            }
+            return;
         }
 
+
+        // ---------------------------------------------
+        // BUSCAR PLAYER
+        // ---------------------------------------------
+
+        PlayerController jugador =
+            collision.gameObject
+                .GetComponent<PlayerController>();
+
+
+        if (jugador == null)
+        {
+            jugador =
+                collision.gameObject
+                    .GetComponentInParent<PlayerController>();
+        }
+
+
+        // ---------------------------------------------
+        // DAÑO POR APLASTAMIENTO
+        // ---------------------------------------------
+
+        if (jugador != null)
+        {
+            jugador.TakeDamage(
+                dañoAplastamiento
+            );
+        }
+
+
         // IMPORTANTE:
-        // Ya NO cambiamos aquí a Subiendo.
         //
-        // DetectarSuelo() es ahora el único sistema
-        // encargado de detectar el suelo y cambiar
-        // al estado Subiendo.
+        // No cambiamos aquí a "Subiendo".
+        //
+        // DetectarSuelo() es el encargado
+        // de detectar el piso.
     }
 
 
@@ -915,24 +1155,33 @@ public class MiniJefeGarra : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         // ---------------------------------------------
-        // DETECCIÓN DEL JUGADOR
+        // ZONA DE DETECCIÓN DEL PLAYER
         // ---------------------------------------------
 
-        Gizmos.color = Color.red;
+        Gizmos.color =
+            Color.red;
 
 
-        Vector3 origen =
-            transform.position;
+        Vector3 centroDeteccion =
+            new Vector3(
+                transform.position.x,
+                transform.position.y +
+                offsetDeteccionY,
+                transform.position.z
+            );
 
 
-        origen.y -= offsetY;
+        Vector3 tamañoDeteccion =
+            new Vector3(
+                anchoDeteccion,
+                altoDeteccion,
+                0f
+            );
 
 
-        Gizmos.DrawLine(
-            origen,
-            origen +
-            Vector3.down *
-            distanciaDeteccion
+        Gizmos.DrawWireCube(
+            centroDeteccion,
+            tamañoDeteccion
         );
 
 
@@ -1002,24 +1251,28 @@ public class MiniJefeGarra : MonoBehaviour
 
 
         // ---------------------------------------------
-        // POSICIÓN ORIGINAL
+        // ALTURA ORIGINAL
         // ---------------------------------------------
 
-        Gizmos.color = Color.cyan;
+        if (Application.isPlaying)
+        {
+            Gizmos.color =
+                Color.cyan;
 
 
-        Vector3 alturaInicial =
-            new Vector3(
-                transform.position.x,
-                posicionOriginal.y,
-                transform.position.z
+            Vector3 alturaInicial =
+                new Vector3(
+                    transform.position.x,
+                    posicionOriginal.y,
+                    transform.position.z
+                );
+
+
+            Gizmos.DrawWireSphere(
+                alturaInicial,
+                0.15f
             );
-
-
-        Gizmos.DrawWireSphere(
-            alturaInicial,
-            0.15f
-        );
+        }
     }
 }
 
@@ -1032,14 +1285,16 @@ public class KamikazeTracker : MonoBehaviour
 {
     private MiniJefeGarra jefe;
 
-    private bool avisado = false;
+    private bool avisado =
+        false;
 
 
     public void Inicializar(
         MiniJefeGarra nuevoJefe
     )
     {
-        jefe = nuevoJefe;
+        jefe =
+            nuevoJefe;
     }
 
 
@@ -1050,7 +1305,9 @@ public class KamikazeTracker : MonoBehaviour
             jefe != null
         )
         {
-            avisado = true;
+            avisado =
+                true;
+
 
             jefe.KamikazeMurio();
         }
