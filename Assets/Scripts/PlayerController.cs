@@ -72,7 +72,17 @@ public class PlayerController : MonoBehaviour
         ConfigurarVidaPorEscena();
         weapon = GetComponentInChildren<Weapon>();
         audioSource = GetComponent<AudioSource>();
+        GameObject objetoFill = GameObject.Find("Fill");
 
+        if (objetoFill != null)
+        {
+            // Si lo encuentra, extrae su componente Image y lo enlaza
+            barraDeVidaUI = objetoFill.GetComponent<Image>();
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró el objeto 'Fill' en esta escena.");
+        }
         // Respawn en checkpoint si existe
         if (GameManager.instance != null && GameManager.instance.HasCheckpoint())
         {
