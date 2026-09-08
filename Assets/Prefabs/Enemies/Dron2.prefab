@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 4208037179995960522}
   m_Layer: 0
   m_Name: Dron2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,7 +239,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -274,7 +274,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6751196694136649889, guid: 64cca64e5f0ca244b846a3b05b995c5b, type: 3}
   fireRate: 3
   detectionRange: 8
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 3467134162191288560}
   canShoot: 1
   damage: 2
   damageCooldown: 2

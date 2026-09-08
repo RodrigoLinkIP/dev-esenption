@@ -202,7 +202,6 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Shoot()
     {
-        Debug.Log("💥 EL ENEMIGO ESTÁ DISPARANDO");
 
         if (bulletPrefab == null || firePoint == null || !canShoot)
             return;
@@ -259,8 +258,6 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator DestruirDespuesDeMorir()
     {
-        player.GetComponent<PlayerController>().PlayVictoriaAudios();
-
         yield return new WaitForSeconds(tiempoMuerte);
 
         // Notificar al ArenaManager antes de destruirse

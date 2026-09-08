@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: 5291c4ef3e4553948a4b98974f3dff41
+guid: a19c56f7d5c383c44905a44aabbe4762
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7330961722625186073
-    second: Mech-2-walk 2-38fc_0
+      213: -999039290917282895
+    second: Fly_up_0
   - first:
-      213: -2327319304748358042
-    second: Mech-2-walk 2-38fc_1
+      213: 310082795982900707
+    second: Fly_up_1
   - first:
-      213: 5456548015387959704
-    second: Mech-2-walk 2-38fc_2
+      213: -2477737716860948508
+    second: Fly_up_2
   - first:
-      213: 521645306103706178
-    second: Mech-2-walk 2-38fc_3
+      213: -6513084993986092137
+    second: Fly_up_3
   - first:
-      213: 4489066842083520608
-    second: Mech-2-walk 2-38fc_4
+      213: -821555454393394949
+    second: Fly_up_4
   - first:
-      213: 1922752680748770537
-    second: Mech-2-walk 2-38fc_5
+      213: 2737651426930424138
+    second: Fly_up_5
   - first:
-      213: 5884679804317061952
-    second: Mech-2-walk 2-38fc_6
+      213: -1289781540348437549
+    second: Fly_up_6
   - first:
-      213: 5677127185557705891
-    second: Mech-2-walk 2-38fc_7
+      213: 3275793210072541053
+    second: Fly_up_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -98,7 +98,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -136,177 +136,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mech-2-walk 2-38fc_0
+      name: Fly_up_0
       rect:
         serializedVersion: 2
-        x: 89
-        y: 212
-        width: 48
-        height: 33
+        x: 0
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9195f0b78deccb560800000000000000
-      internalID: 7330961722625186073
+      spriteID: 1bb973cde03b222f0800000000000000
+      internalID: -999039290917282895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mech-2-walk 2-38fc_1
+      name: Fly_up_1
       rect:
         serializedVersion: 2
-        x: 135
-        y: 202
-        width: 104
-        height: 71
+        x: 96
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 666a0994c63b3bfd0800000000000000
-      internalID: -2327319304748358042
+      spriteID: 3ed4589f8a2ad4400800000000000000
+      internalID: 310082795982900707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mech-2-walk 2-38fc_2
+      name: Fly_up_2
       rect:
         serializedVersion: 2
-        x: 255
-        y: 214
-        width: 48
-        height: 33
+        x: 192
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 891ef0d828d89bb40800000000000000
-      internalID: 5456548015387959704
+      spriteID: 4ef6ae39cae4d9dd0800000000000000
+      internalID: -2477737716860948508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mech-2-walk 2-38fc_3
+      name: Fly_up_3
       rect:
         serializedVersion: 2
-        x: 106
-        y: 171
-        width: 43
-        height: 29
+        x: 288
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 242bf0164a14d3700800000000000000
-      internalID: 521645306103706178
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mech-2-walk 2-38fc_4
-      rect:
-        serializedVersion: 2
-        x: 174
-        y: 178
-        width: 43
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0607f5f328e5c4e30800000000000000
-      internalID: 4489066842083520608
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mech-2-walk 2-38fc_5
-      rect:
-        serializedVersion: 2
-        x: 244
-        y: 171
-        width: 43
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e4e5fe306dfeaa10800000000000000
-      internalID: 1922752680748770537
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mech-2-walk 2-38fc_6
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 119
-        width: 45
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 043db398a159aa150800000000000000
-      internalID: 5884679804317061952
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mech-2-walk 2-38fc_7
-      rect:
-        serializedVersion: 2
-        x: 243
-        y: 120
-        width: 45
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3a451e7b81539ce40800000000000000
-      internalID: 5677127185557705891
+      spriteID: 793288da4bfdc95a0800000000000000
+      internalID: -6513084993986092137
       vertices: []
       indices: 
       edges: []
@@ -315,7 +227,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8dcb5629f5560f24185f2c49361d6585
     internalID: 0
     vertices: []
     indices: 
@@ -323,16 +235,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":96.0,"y":96.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Mech-2-walk 2-38fc_0: 7330961722625186073
-      Mech-2-walk 2-38fc_1: -2327319304748358042
-      Mech-2-walk 2-38fc_2: 5456548015387959704
-      Mech-2-walk 2-38fc_3: 521645306103706178
-      Mech-2-walk 2-38fc_4: 4489066842083520608
-      Mech-2-walk 2-38fc_5: 1922752680748770537
-      Mech-2-walk 2-38fc_6: 5884679804317061952
-      Mech-2-walk 2-38fc_7: 5677127185557705891
+      Fly_up_0: -999039290917282895
+      Fly_up_1: 310082795982900707
+      Fly_up_2: -2477737716860948508
+      Fly_up_3: -6513084993986092137
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

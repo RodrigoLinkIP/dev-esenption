@@ -1,61 +1,49 @@
 fileFormatVersion: 2
-guid: 6b7e45f453f638c46b182b9c1e5f4a93
+guid: 173b4b772affe1742a5c739bc123ff41
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8762032217062444704
-    second: "Mech-walk-200\xD7150px-sprites_0"
+      213: -3164809056393425246
+    second: 01_0
   - first:
-      213: 1714962070608244866
-    second: "Mech-walk-200\xD7150px-sprites_1"
+      213: -8314853801317715943
+    second: 01_1
   - first:
-      213: -4841735973319576852
-    second: "Mech-walk-200\xD7150px-sprites_2"
+      213: -6316419149885394363
+    second: 01_2
   - first:
-      213: 220347010474365383
-    second: "Mech-walk-200\xD7150px-sprites_3"
+      213: 4552446279970383544
+    second: 01_3
   - first:
-      213: -5448930847160528594
-    second: "Mech-walk-200\xD7150px-sprites_4"
+      213: -432044704189994971
+    second: 01_4
   - first:
-      213: 6167229709822925752
-    second: "Mech-walk-200\xD7150px-sprites_5"
+      213: 7581216841169000449
+    second: 01_5
   - first:
-      213: 5020927935096772653
-    second: "Mech-walk-200\xD7150px-sprites_6"
+      213: 1174215894288108903
+    second: 01_6
   - first:
-      213: 5238715930858956856
-    second: "Mech-walk-200\xD7150px-sprites_7"
+      213: -5151961898046608130
+    second: 01_7
   - first:
-      213: 2237750425577191788
-    second: "Mech-walk-200\xD7150px-sprites_8"
+      213: -6889933802576209255
+    second: 01_8
   - first:
-      213: 3142950684724617563
-    second: "Mech-walk-200\xD7150px-sprites_9"
+      213: -6007869707964244330
+    second: 01_9
   - first:
-      213: 4894305940712251989
-    second: "Mech-walk-200\xD7150px-sprites_10"
+      213: 9164498295892709235
+    second: 01_10
   - first:
-      213: -896362024604703906
-    second: "Mech-walk-200\xD7150px-sprites_11"
+      213: -1844976358774484495
+    second: 01_11
   - first:
-      213: -6437334110714544235
-    second: "Mech-walk-200\xD7150px-sprites_12"
+      213: 4930078325819049647
+    second: 01_12
   - first:
-      213: 1625873474573430920
-    second: "Mech-walk-200\xD7150px-sprites_13"
-  - first:
-      213: -6299157345956739330
-    second: "Mech-walk-200\xD7150px-sprites_14"
-  - first:
-      213: 5451915970286118980
-    second: "Mech-walk-200\xD7150px-sprites_15"
-  - first:
-      213: 6148765559701718579
-    second: "Mech-walk-200\xD7150px-sprites_16"
-  - first:
-      213: -8767528856375049214
-    second: "Mech-walk-200\xD7150px-sprites_17"
+      213: -1304810924755585831
+    second: 01_13
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -88,7 +76,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -128,7 +116,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -166,13 +154,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_0"
+      name: 01_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 227
-        width: 133
-        height: 71
+        x: 0
+        y: 117
+        width: 81
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ae0980d0edf89970800000000000000
-      internalID: 8762032217062444704
+      spriteID: 2ae0bbb5ee65414d0800000000000000
+      internalID: -3164809056393425246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_1"
+      name: 01_1
       rect:
         serializedVersion: 2
-        x: 49
-        y: 156
-        width: 97
-        height: 72
+        x: 81
+        y: 99
+        width: 46
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +191,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2807fddbae4ccc710800000000000000
-      internalID: 1714962070608244866
+      spriteID: 910b62d8584bb9c80800000000000000
+      internalID: -8314853801317715943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_2"
+      name: 01_2
       rect:
         serializedVersion: 2
-        x: 235
-        y: 156
-        width: 133
-        height: 140
+        x: 129
+        y: 99
+        width: 46
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ce27e0ee8c2beccb0800000000000000
-      internalID: -4841735973319576852
+      spriteID: 5423b9ebf329758a0800000000000000
+      internalID: -6316419149885394363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_3"
+      name: 01_3
       rect:
         serializedVersion: 2
-        x: 435
-        y: 156
-        width: 133
-        height: 140
+        x: 177
+        y: 99
+        width: 46
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +235,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c1d4a64074de0300800000000000000
-      internalID: 220347010474365383
+      spriteID: 8b6eea095c98d2f30800000000000000
+      internalID: 4552446279970383544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_4"
+      name: 01_4
       rect:
         serializedVersion: 2
-        x: 635
-        y: 156
-        width: 133
-        height: 140
+        x: 225
+        y: 99
+        width: 46
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e211451a3428164b0800000000000000
-      internalID: -5448930847160528594
+      spriteID: 528aaaf61a1110af0800000000000000
+      internalID: -432044704189994971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_5"
+      name: 01_5
       rect:
         serializedVersion: 2
-        x: 835
-        y: 156
-        width: 133
-        height: 140
+        x: 0
+        y: 85
+        width: 81
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8bb1b36eeb6669550800000000000000
-      internalID: 6167229709822925752
+      spriteID: 108561fcc84e53960800000000000000
+      internalID: 7581216841169000449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_6"
+      name: 01_6
       rect:
         serializedVersion: 2
-        x: 1035
-        y: 156
-        width: 133
-        height: 140
+        x: 85
+        y: 55
+        width: 38
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +301,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d28574eda5beda540800000000000000
-      internalID: 5020927935096772653
+      spriteID: 76d09a47227ab4010800000000000000
+      internalID: 1174215894288108903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_7"
+      name: 01_7
       rect:
         serializedVersion: 2
-        x: 1235
-        y: 156
-        width: 133
-        height: 140
+        x: 133
+        y: 55
+        width: 38
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,20 +323,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 838270a1268a3b840800000000000000
-      internalID: 5238715930858956856
+      spriteID: efca59233fd8088b0800000000000000
+      internalID: -5151961898046608130
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_8"
+      name: 01_8
       rect:
         serializedVersion: 2
-        x: 1435
-        y: 156
-        width: 133
-        height: 140
+        x: 181
+        y: 55
+        width: 38
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,20 +345,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c69f18ce7261e0f10800000000000000
-      internalID: 2237750425577191788
+      spriteID: 99a1d7306b90260a0800000000000000
+      internalID: -6889933802576209255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_9"
+      name: 01_9
       rect:
         serializedVersion: 2
-        x: 35
-        y: 6
-        width: 133
-        height: 140
+        x: 229
+        y: 55
+        width: 38
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -379,20 +367,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b51e495eef00e9b20800000000000000
-      internalID: 3142950684724617563
+      spriteID: 69e16f7e452cf9ca0800000000000000
+      internalID: -6007869707964244330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_10"
+      name: 01_10
       rect:
         serializedVersion: 2
-        x: 235
-        y: 6
-        width: 133
-        height: 142
+        x: 0
+        y: 53
+        width: 81
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -401,20 +389,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 552ec3a62511ce340800000000000000
-      internalID: 4894305940712251989
+      spriteID: 37f8b5ff4a6de2f70800000000000000
+      internalID: 9164498295892709235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_11"
+      name: 01_11
       rect:
         serializedVersion: 2
-        x: 435
-        y: 6
-        width: 133
-        height: 142
+        x: 0
+        y: 21
+        width: 81
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -423,20 +411,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e53694ddc7b7f83f0800000000000000
-      internalID: -896362024604703906
+      spriteID: 1f1d04cd6c35566e0800000000000000
+      internalID: -1844976358774484495
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_12"
+      name: 01_12
       rect:
         serializedVersion: 2
-        x: 635
-        y: 6
-        width: 133
-        height: 142
+        x: 79
+        y: 3
+        width: 82
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -445,20 +433,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 59fba569bbef9a6a0800000000000000
-      internalID: -6437334110714544235
+      spriteID: fa60c4ddd182b6440800000000000000
+      internalID: 4930078325819049647
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_13"
+      name: 01_13
       rect:
         serializedVersion: 2
-        x: 835
-        y: 6
-        width: 133
-        height: 142
+        x: 175
+        y: 3
+        width: 82
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,96 +455,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 880fda59f43409610800000000000000
-      internalID: 1625873474573430920
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_14"
-      rect:
-        serializedVersion: 2
-        x: 1035
-        y: 6
-        width: 133
-        height: 142
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ef6c4f9a4c5e498a0800000000000000
-      internalID: -6299157345956739330
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_15"
-      rect:
-        serializedVersion: 2
-        x: 1235
-        y: 6
-        width: 133
-        height: 142
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 448ee2280b819ab40800000000000000
-      internalID: 5451915970286118980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_16"
-      rect:
-        serializedVersion: 2
-        x: 1435
-        y: 76
-        width: 133
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3364d21f2bdc45550800000000000000
-      internalID: 6148765559701718579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Mech-walk-200\xD7150px-sprites_17"
-      rect:
-        serializedVersion: 2
-        x: 1449
-        y: 6
-        width: 97
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 20447cd15fa735680800000000000000
-      internalID: -8767528856375049214
+      spriteID: 9d4f4ea806164ede0800000000000000
+      internalID: -1304810924755585831
       vertices: []
       indices: 
       edges: []
@@ -575,24 +475,20 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Mech-walk-200\xD7150px-sprites_0": 8762032217062444704
-      "Mech-walk-200\xD7150px-sprites_1": 1714962070608244866
-      "Mech-walk-200\xD7150px-sprites_10": 4894305940712251989
-      "Mech-walk-200\xD7150px-sprites_11": -896362024604703906
-      "Mech-walk-200\xD7150px-sprites_12": -6437334110714544235
-      "Mech-walk-200\xD7150px-sprites_13": 1625873474573430920
-      "Mech-walk-200\xD7150px-sprites_14": -6299157345956739330
-      "Mech-walk-200\xD7150px-sprites_15": 5451915970286118980
-      "Mech-walk-200\xD7150px-sprites_16": 6148765559701718579
-      "Mech-walk-200\xD7150px-sprites_17": -8767528856375049214
-      "Mech-walk-200\xD7150px-sprites_2": -4841735973319576852
-      "Mech-walk-200\xD7150px-sprites_3": 220347010474365383
-      "Mech-walk-200\xD7150px-sprites_4": -5448930847160528594
-      "Mech-walk-200\xD7150px-sprites_5": 6167229709822925752
-      "Mech-walk-200\xD7150px-sprites_6": 5020927935096772653
-      "Mech-walk-200\xD7150px-sprites_7": 5238715930858956856
-      "Mech-walk-200\xD7150px-sprites_8": 2237750425577191788
-      "Mech-walk-200\xD7150px-sprites_9": 3142950684724617563
+      01_0: -3164809056393425246
+      01_1: -8314853801317715943
+      01_10: 9164498295892709235
+      01_11: -1844976358774484495
+      01_12: 4930078325819049647
+      01_13: -1304810924755585831
+      01_2: -6316419149885394363
+      01_3: 4552446279970383544
+      01_4: -432044704189994971
+      01_5: 7581216841169000449
+      01_6: 1174215894288108903
+      01_7: -5151961898046608130
+      01_8: -6889933802576209255
+      01_9: -6007869707964244330
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

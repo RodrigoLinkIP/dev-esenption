@@ -44,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SeleccionPersonaje.unity
     guid: 62ee41a036d63ee459a08bf065f6d127
+  - enabled: 1
+    path: Assets/Scenes/BatallaFinal.unity
+    guid: 0aa8489a162df494c8307eefa37875f0
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

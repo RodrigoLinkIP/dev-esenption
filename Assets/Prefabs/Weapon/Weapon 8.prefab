@@ -79,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   bulletDefault: {fileID: 6751196694136649889, guid: 2ebc34b1270b1174db99bf4dceb8f171, type: 3}
   firePoint: {fileID: 1210685595692090938}
-  fireRate: 2.2
+  fireRate: 1.6
   cantidadBalas: 5
   dispersion: 10
 --- !u!1 &7829499196013773540

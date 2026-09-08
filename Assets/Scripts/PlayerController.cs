@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -38,6 +39,10 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+
+    [Header("Interfaz")]
+    public Image barraDeVidaUI;
+
 
     [Header("Audioa Daño")]
     public AudioClip[] dannioSounds;
@@ -261,6 +266,16 @@ public class PlayerController : MonoBehaviour
         int indiceAleatorio = UnityEngine.Random.Range(0, sonidos.Length);
 
         audioSource.PlayOneShot(sonidos[indiceAleatorio]);
+    }
+
+    void ActualizarBarra()
+    {
+        // El slider fillAmount requiere un valor entre 0 y 1. 
+        // Dividir actual/máxima nos da exactamente esa proporción (ej. 50/100 = 0.5f)
+        if (barraDeVidaUI != null)
+        {
+            barraDeVidaUI.fillAmount = currentHealth / maxHealth;
+        }
     }
 
     void FixedUpdate()
