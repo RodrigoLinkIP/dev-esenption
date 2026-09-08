@@ -1103,7 +1103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740de4d1626eab64095429f2e469efcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  musicasNormales: []
+  musicasNormales:
+  - {fileID: 8300000, guid: 07beb1e1ca6bdd04da94cd5b6f58b2a7, type: 3}
   musicaJefe: {fileID: 8300000, guid: 48dc1db1ea9387b41abb3680ca8f6249, type: 3}
   volumen: 1
 --- !u!82 &1135501610
