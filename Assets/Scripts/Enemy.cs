@@ -11,6 +11,15 @@ public class Enemy : MonoBehaviour
     public float speed = 2f;
     public float patrolDistance = 4f;
 
+    [Header("Vuelo")]
+    public bool esVolador = false;
+    public float alturaVuelo = 1.5f; // altura sobre el suelo
+
+    [Header("Límites de patrulla")]
+    public float limiteIzquierda = -5f;
+    public float limiteDerecha = 5f;
+    public bool usarLimites = false;
+
     private Vector3 startPosition;
     private int direction = 1;
 
@@ -36,6 +45,7 @@ public class Enemy : MonoBehaviour
 
     private float lastFireTime;
     private Transform player;
+    private bool yaNotificoArena = false;
 
     // =====================================================
     // ATAQUE
@@ -133,58 +143,63 @@ public class Enemy : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        // =================================================
-        // PATRULLA
-        // =================================================
-
-        if (rb == null)
-            return;
+        if (rb == null) return;
 
         if (muerto)
         {
-            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            rb.linearVelocity = Vector2.zero;
             return;
         }
 
-        rb.linearVelocity = new Vector2(
-            direction * speed,
-            rb.linearVelocity.y
-        );
-
-        float distanceTraveled =
-            transform.position.x - startPosition.x;
-
-        if (distanceTraveled > patrolDistance)
+        if (esVolador)
         {
-            direction = -1;
+            float newY = Mathf.Lerp(
+                transform.position.y,
+                alturaVuelo,
+                Time.fixedDeltaTime * 5f
+            );
+
+            rb.MovePosition(new Vector2(
+                transform.position.x + direction * speed * Time.fixedDeltaTime,
+                newY
+            ));
+
+            // Límites absolutos en X
+            if (usarLimites)
+            {
+                if (transform.position.x >= limiteDerecha) direction = -1;
+                if (transform.position.x <= limiteIzquierda) direction = 1;
+            }
         }
-        else if (distanceTraveled < -patrolDistance)
+        else
         {
-            direction = 1;
+            rb.linearVelocity = new Vector2(
+                direction * speed,
+                rb.linearVelocity.y
+            );
         }
 
-        // Girar enemigo
+        // Patrulla (igual para volador y terrestre)
+        float distanceTraveled = transform.position.x - startPosition.x;
+
+        if (distanceTraveled > patrolDistance) direction = -1;
+        else if (distanceTraveled < -patrolDistance) direction = 1;
+
         transform.rotation = Quaternion.Euler(
             0f,
             direction < 0 ? 180f : 0f,
             0f
         );
 
-        // =================================================
-        // ANIMACIÓN
-        // =================================================
-
         if (animator != null)
-        {
-            animator.SetBool("isWalking", Mathf.Abs(rb.linearVelocity.x) > 0.1f);
-        }
+            animator.SetBool("isWalking", true);
     }
 
 
     // =====================================================
     // DISPARO
     // =====================================================
-   
+
     protected virtual void Shoot()
     {
         Debug.Log("💥 EL ENEMIGO ESTÁ DISPARANDO");
@@ -248,6 +263,13 @@ public class Enemy : MonoBehaviour
 
         yield return new WaitForSeconds(tiempoMuerte);
 
+        // Notificar al ArenaManager antes de destruirse
+        if (arena != null && !yaNotificoArena)
+        {
+            yaNotificoArena = true;
+            arena.NotificarDroneMuerto();
+        }
+
         Destroy(gameObject);
     }
 
@@ -302,5 +324,16 @@ public class Enemy : MonoBehaviour
             transform.position,
             detectionRange
         );
+    }
+
+    // =====================================================
+    // ARENA
+    // =====================================================
+
+    private ArenaManager arena;
+
+    public void SetArena(ArenaManager arenaManager)
+    {
+        arena = arenaManager;
     }
 }

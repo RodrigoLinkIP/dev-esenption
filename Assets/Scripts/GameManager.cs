@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,18 @@ public class GameManager : MonoBehaviour
     private string checkpointScene;
     private Vector3 checkpointPosition;
     private bool hasCheckpoint = false;
+    private HashSet<string> npcsCompletados = new HashSet<string>();
+    private HashSet<string> arenasCompletadas = new HashSet<string>();
+
+    public void MarcarNPCCompletado(string npcID)
+    {
+        npcsCompletados.Add(npcID);
+    }
+
+    public bool NPCEstaCompletado(string npcID)
+    {
+        return npcsCompletados.Contains(npcID);
+    }
 
     void Awake()
     {
@@ -37,7 +50,17 @@ public class GameManager : MonoBehaviour
         if (hasCheckpoint)
             SceneManager.LoadScene(checkpointScene);
         else
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name); // reinicia escena actual
+            SceneManager.LoadScene(0); // reinicia escena del lobby
+    }
+
+    public void MarcarArenaCompletada(string arenaID)
+    {
+        arenasCompletadas.Add(arenaID);
+    }
+
+    public bool ArenaEstaCompletada(string arenaID)
+    {
+        return arenasCompletadas.Contains(arenaID);
     }
 
     public bool HasCheckpoint() => hasCheckpoint;

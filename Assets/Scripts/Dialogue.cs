@@ -29,6 +29,14 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private GameObject dialogueMark;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
+    
+    [Header("Comportamiento al terminar")]
+    [SerializeField] private bool desaparecerAlTerminar = false;
+    [SerializeField] private string npcID;
+
+    [Header("Sonido")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] sonidosDialogo;
 
     public float typingTime = 0.0f;
 
@@ -47,7 +55,15 @@ public class Dialogue : MonoBehaviour
     {
         dialogueMarkAnimator = dialogueMark.GetComponent<Animator>();
         npcAnimator = GetComponentInChildren<Animator>();
+
+        // Si este NPC ya fue completado, eliminarlo inmediatamente
+        if (desaparecerAlTerminar && GameManager.instance != null
+            && GameManager.instance.NPCEstaCompletado(npcID))
+        {
+            gameObject.SetActive(false);
+        }
     }
+
     void Update()
     {
         if (isPlayerInRange && Keyboard.current.eKey.wasPressedThisFrame)
@@ -68,13 +84,17 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    private void StartDialogue()
+    public void StartDialogue(bool forzar = false)
     {
-        didDialogueStart = true;
+        if (forzar) isPlayerInRange = true;
 
+        didDialogueStart = true;
         dialoguePanel.SetActive(true);
         dialogueMark.SetActive(true);
         lineIndex = 0;
+
+        if (audioSource != null && sonidosDialogo != null)
+            ReproducirSonido();
 
         typingCoroutine = StartCoroutine(ShowLine());
     }
@@ -85,6 +105,9 @@ public class Dialogue : MonoBehaviour
 
         if (lineIndex < dialogueLines.Length)
         {
+            if (audioSource != null && sonidosDialogo != null)
+                ReproducirSonido();
+
             typingCoroutine = StartCoroutine(ShowLine());
         }
         else
@@ -149,9 +172,28 @@ public class Dialogue : MonoBehaviour
     private void EndDialogue()
     {
         didDialogueStart = false;
-
         dialoguePanel.SetActive(false);
-        dialogueMark.SetActive(true);
+        dialogueMark.SetActive(false);
+
+        if (npcAnimator != null)
+            npcAnimator.SetBool("isTalking", false);
+
+        if (desaparecerAlTerminar)
+        {
+            // Registrar en GameManager
+            if (GameManager.instance != null && !string.IsNullOrEmpty(npcID))
+                GameManager.instance.MarcarNPCCompletado(npcID);
+
+            if (npcAnimator != null)
+                npcAnimator.SetTrigger("vanish");
+
+            isPlayerInRange = false;
+            GetComponent<Collider2D>().enabled = false;
+        }
+        else
+        {
+            dialogueMark.SetActive(true); // NPCs normales mantienen el ícono
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -195,5 +237,17 @@ public class Dialogue : MonoBehaviour
                 npcAnimator.SetBool("isTalking", false);
             }
         }
+    }
+
+    private void ReproducirSonido()
+    {
+        if (audioSource == null || sonidosDialogo.Length == 0) return;
+
+        if (dialogueLines[lineIndex].tipoNombre != TipoNombre.NPC) return;
+
+        Debug.Log("ReproducirSonido llamado desde: " + gameObject.name);
+
+        AudioClip clip = sonidosDialogo[Random.Range(0, sonidosDialogo.Length)];
+        audioSource.PlayOneShot(clip);
     }
 }

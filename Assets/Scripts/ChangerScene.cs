@@ -14,13 +14,15 @@ public class ChangerScene : MonoBehaviour
 
     private bool playerDentro = false;
 
+    public bool bloqueado = false;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerDentro = true;
 
-            if (!requiereTecla)
+            if (!requiereTecla && !bloqueado)
             {
                 CambiarEscena();
             }
@@ -37,7 +39,7 @@ public class ChangerScene : MonoBehaviour
 
     private void Update()
     {
-        if (requiereTecla && playerDentro)
+        if (requiereTecla && playerDentro && !bloqueado)
         {
             if (Keyboard.current.eKey.wasPressedThisFrame)
             {

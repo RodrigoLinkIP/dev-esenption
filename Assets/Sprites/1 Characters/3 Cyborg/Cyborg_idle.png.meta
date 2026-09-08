@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 1df6d01e65f57c84fac660763777352b
+guid: 18cf146e325d6e44b8f9a2df25e2fc27
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3781910019033479378
-    second: Idle1_0
+      213: -8019239915147560276
+    second: Cyborg_idle_0
   - first:
-      213: -1461846728506201224
-    second: Idle1_1
+      213: -6526221278753614019
+    second: Cyborg_idle_1
   - first:
-      213: 2274338124900576597
-    second: Idle1_2
+      213: -1626806750166959302
+    second: Cyborg_idle_2
   - first:
-      213: 5965835319419519687
-    second: Idle1_3
+      213: 7969078075045196988
+    second: Cyborg_idle_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -124,7 +124,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle1_0
+      name: Cyborg_idle_0
       rect:
         serializedVersion: 2
         x: 2
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e27c40700e4f38bc0800000000000000
-      internalID: -3781910019033479378
+      spriteID: caafef0f8cfe5b090800000000000000
+      internalID: -8019239915147560276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle1_1
+      name: Cyborg_idle_1
       rect:
         serializedVersion: 2
         x: 50
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87b2257452a76bbe0800000000000000
-      internalID: -1461846728506201224
+      spriteID: d379b4a03543e65a0800000000000000
+      internalID: -6526221278753614019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle1_2
+      name: Cyborg_idle_2
       rect:
         serializedVersion: 2
         x: 97
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 55da3d18972109f10800000000000000
-      internalID: 2274338124900576597
+      spriteID: a3b371241eb6c69e0800000000000000
+      internalID: -1626806750166959302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle1_3
+      name: Cyborg_idle_3
       rect:
         serializedVersion: 2
         x: 145
@@ -205,8 +205,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c2ca7a5d97eac250800000000000000
-      internalID: 5965835319419519687
+      spriteID: cb43c6a894ad79e60800000000000000
+      internalID: 7969078075045196988
       vertices: []
       indices: 
       edges: []
@@ -225,10 +225,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Idle1_0: -3781910019033479378
-      Idle1_1: -1461846728506201224
-      Idle1_2: 2274338124900576597
-      Idle1_3: 5965835319419519687
+      Cyborg_idle_0: -8019239915147560276
+      Cyborg_idle_1: -6526221278753614019
+      Cyborg_idle_2: -1626806750166959302
+      Cyborg_idle_3: 7969078075045196988
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

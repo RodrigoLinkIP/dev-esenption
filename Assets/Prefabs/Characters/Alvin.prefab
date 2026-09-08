@@ -162,7 +162,7 @@ MonoBehaviour:
   dashSpeed: 15
   dashDuration: 0.2
   dashCooldown: 1
-  maxHealth: 20
+  maxHealth: 3
   currentHealth: 0
   groundCheck: {fileID: 7445842852242989353}
   groundLayer:
@@ -371,7 +371,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -3781910019033479378, guid: 45238116c638f664abb7cc25ad7146cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -123,6 +123,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   speed: 2
   patrolDistance: 4
+  esVolador: 1
+  alturaVuelo: -2.7
+  limiteIzquierda: -13.5
+  limiteDerecha: 3
+  usarLimites: 1
   maxHealth: 3
   tiempoMuerte: 1.3
   bulletPrefab: {fileID: 6751196694136649889, guid: d614e92457df32d46aec3d0f98aafd12, type: 3}
