@@ -37,8 +37,41 @@ public class Bullet : MonoBehaviour
 
         if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<Enemy>()?.TakeDamage(damage);
-            Destroy(gameObject);
+            Dron2 dron2 = collision.GetComponent<Dron2>();
+
+            if (dron2 != null)
+            {
+                dron2.TakeDamage(damage);
+                Destroy(gameObject);
+                return;
+            }
+
+            Enemy enemy = collision.GetComponentInParent<Enemy>();
+
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+                Destroy(gameObject);
+                return;
+            }
+
+            MiniJefeGarra miniJefeGarra = collision.GetComponent<MiniJefeGarra>();
+
+            if (miniJefeGarra != null)
+            {
+                miniJefeGarra.TakeDamage(damage);
+                Destroy(gameObject);
+                return;
+            }
+
+            FinalBoss boss = collision.GetComponentInParent<FinalBoss>();
+
+            if (boss != null)
+            {
+                boss.TakeDamage(damage);
+                Destroy(gameObject);
+                return;
+            }
         }
 
         if (collision.CompareTag("Player"))

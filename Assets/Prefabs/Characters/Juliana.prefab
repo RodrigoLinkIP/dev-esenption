@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5435815756767133578}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 8428538832849441893}
   - component: {fileID: 8424615825869128813}
   - component: {fileID: 8333533571759811084}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 1744851916908754262}
   - component: {fileID: 3150480165899200810}
   - component: {fileID: 4948209234914865703}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Juliana
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -451,9 +451,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6433001204086457365, guid: b9e5c34477f3b41439cc330930e77e17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7521050599054168897, guid: b9e5c34477f3b41439cc330930e77e17, type: 3}
       propertyPath: m_Name
       value: Weapon 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521050599054168897, guid: b9e5c34477f3b41439cc330930e77e17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7829499196013773540, guid: b9e5c34477f3b41439cc330930e77e17, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

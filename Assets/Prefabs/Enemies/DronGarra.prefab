@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3857536789773962116}
   m_Layer: 0
   m_Name: DronGarra
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.85, y: 0.61}
   m_EdgeRadius: 0
 --- !u!50 &6268338755874717907
 Rigidbody2D:
