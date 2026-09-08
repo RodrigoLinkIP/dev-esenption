@@ -37,6 +37,15 @@ public class Bullet : MonoBehaviour
 
         if (collision.CompareTag("Enemy"))
         {
+            EnemigoKamikaze enemigoKamikaze = collision.GetComponent<EnemigoKamikaze>();
+
+            if (enemigoKamikaze != null)
+            {
+                enemigoKamikaze.TakeDamage(damage);
+                Destroy(gameObject);
+                return;
+            }
+
             Dron2 dron2 = collision.GetComponent<Dron2>();
 
             if (dron2 != null)

@@ -1814,9 +1814,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   maxHealth: 20
   detectionRange: 11
-  attackRange: 6
+  attackRange: 7
   detectionRangeFaseDos: 13
-  attackRangeFaseDos: 7
+  attackRangeFaseDos: 8
   walkSpeed: 3
   patrolSpeed: 1.5
   patrolChangeTime: 3
@@ -1827,7 +1827,7 @@ MonoBehaviour:
   timeBetweenFlights: 8
   attackDuration: 1
   attackWalkDuration: 3
-  timeBetweenAttacks: 3
+  timeBetweenAttacks: 2
   bulletPrefab: {fileID: 6751196694136649889, guid: 40b0bc6d565a48a498079bca7c694a97, type: 3}
   firePoint: {fileID: 1405978932}
   timeBetweenShots: 1.2
